@@ -60,10 +60,10 @@ spec:
       volumes:
         - name: creds
           secret:
-            secretName: {{ .Values.cloudflare.secretName | default (include "cloudflare-tunnel.fullname" .) }}
+            secretName: {{ .Values.cloudflare.secretName | default (include "cloudflare-tunnel-remote.fullname" .) }}
         - name: config
           configMap:
-            name: {{ include "cloudflare-tunnel.fullname" . }}
+            name: {{ include "cloudflare-tunnel-remote.fullname" . }}
             items:
               - key: config.yaml
                 path: config.yaml
@@ -82,7 +82,7 @@ spec:
                 topologyKey: kubernetes.io/hostname
                 labelSelector:
                   matchExpressions:
-                  {{- range $k, $v := include "cloudflare-tunnel.selectorLabels" . | fromYaml }}
+                  {{- range $k, $v := include "cloudflare-tunnel-remote.selectorLabels" . | fromYaml }}
                     - key: {{ $k }}
                       operator: In
                       values:
