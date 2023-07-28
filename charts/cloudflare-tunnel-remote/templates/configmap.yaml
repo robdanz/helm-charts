@@ -1,0 +1,7 @@
+# This configmap stores the configuration used by cloudflared.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "cloudflare-tunnel-remote.fullname" . }}
+data:
+  config.yaml: |
