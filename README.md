@@ -13,8 +13,8 @@ robdanz` to see the charts.
 
 To install the cloudflare-tunnel-remote chart:
 
-    helm install my-cloudflare-tunnel-remote robdanz/cloudflare-tunnel-remote
+    helm install cloudflare-tunnel-remote robdanz/helm-charts
 
 To uninstall the chart:
 
-    helm delete my-cloudflare-tunnel-remote
+    helm delete cloudflare-tunnel-remote
