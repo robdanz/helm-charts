@@ -14,7 +14,6 @@ spec:
       creationTimestamp: null
       annotations:
         # These are here so the deployment rolls when the config or secret change.
-        checksum/configmap: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
         {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
